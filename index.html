@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobbies: Playing Songs</title>
+    <style>
+        /* The body acts as a container for the layers */
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            color: #00d4ff;
+            text-align: center;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* The Background Layer: Blurred and Darkened */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px); /* Adjust blur strength here */
+            transform: scale(1.1); /* Prevents white edges from blur */
+            z-index: -1; /* Keeps it behind the content */
+        }
+
+        /* Content Styling */
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            animation: fadeIn 2s ease-in-out, shineText 2s infinite alternate;
+        }
+
+        h2, h3 {
+            margin-top: 40px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            animation: shineText 2s infinite alternate;
+        }
+
+        p {
+            font-size: 1.2em;
+            max-width: 800px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            animation: shineText 2s infinite alternate;
+        }
+
+        ul, ol {
+            list-style-position: inside;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: left;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            animation: shineText 2s infinite alternate;
+        }
+
+        li {
+            margin: 10px 0;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        li:hover {
+            transform: scale(1.05);
+            color: #ff6b6b;
+        }
+
+        a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #ffcc00;
+        }
+
+        /* Image remains sharp and has its own animation */
+        .featured-image {
+            max-width: 100%;
+            width: 400px;
+            height: auto;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.8);
+            animation: epicImage 8s infinite linear;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            animation: shineText 2s infinite alternate;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0,212,255,0.2);
+        }
+
+        th {
+            background: rgba(255, 107, 107, 0.8);
+            color: #fff;
+        }
+
+        caption {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .play-button {
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes epicImage {
+            0% { transform: rotate(0deg); box-shadow: 0 0 20px #FFD700; }
+            50% { box-shadow: 0 0 40px #00d4ff; }
+            100% { transform: rotate(360deg); box-shadow: 0 0 20px #FFD700; }
+        }
+
+        @keyframes shineText {
+            0% { text-shadow: 0 0 5px #00d4ff; }
+            50% { text-shadow: 0 0 15px #00d4ff, 0 0 25px #00d4ff; }
+            100% { text-shadow: 0 0 5px #00d4ff; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            table { font-size: 0.8em; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Hobbies</h1>
+    <p>One of my favorite hobbies is playing songs. Whether on a guitar, piano, or just singing along, it brings me joy!</p>
+
+    <h2>My Favorite Instruments</h2>
+    <ul>
+        <li>Guitar</li>
+        <li>Piano</li>
+        <li>Flute</li>
+    </ul>
+
+    <h3>Top 3 Songs I Play</h3>
+    <ol>
+        <li>Tahanan by El Mano</li>
+        <li>Alipin by Michael Pangilinan</li>
+        <li>Multo by Cup of Joe</li>
+    </ol>
+
+    <h2>Explore More Music</h2>
+    <p>Check out this <a href="https://www.youtube.com" target="_blank">YouTube link</a> for tutorials!</p>
+    <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=400&h=300&fit=crop" alt="Guitar" class="featured-image">
+
+    <h2>My Song Practice Table</h2>
+    <table>
+        <caption>Songs I'm Practicing</caption>
+        <thead>
+            <tr>
+                <th>Song Title</th>
+                <th>Artist</th>
+                <th>Instrument</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tahanan</td>
+                <td>El Mano</td>
+                <td>Guitar</td>
+            </tr>
+            <tr>
+                <td>Alipin</td>
+                <td>Michael Pangilinan</td>
+                <td>Piano</td>
+            </tr>
+            <tr>
+                <td>Multo</td>
+                <td>Cup of Joe</td>
+                <td>Flute</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="play-button" onclick="playSong('A Random Song')">🎵 Play a Random Song</button>
+
+    <script>
+        window.onload = function() {
+            alert('Welcome! The background is now blurred for better focus.');
+            const elements = document.querySelectorAll('h1, h2, h3, p, ul, ol, img, table, .play-button');
+            elements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.animation = 'fadeIn 1s ease-in-out forwards';
+            });
+        };
+
+        function playSong(song) {
+            alert(`Now playing: ${song}!`);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const listItems = document.querySelectorAll('li');
+            listItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const text = this.textContent;
+                    if (['Guitar', 'Piano', 'Flute'].includes(text)) {
+                        alert(`I love playing the ${text}!`);
+                    } else {
+                        playSong(text);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
